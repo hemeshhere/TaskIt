@@ -24,6 +24,7 @@ const CreateForm = () => {
         <div className="mb-3">
           <label className="form-label">Work</label>
           <input
+            required
             type="text"
             className="form-control"
             name="title"
@@ -34,6 +35,7 @@ const CreateForm = () => {
         <div className="mb-3">
           <label className="form-label">Describe the work</label>
           <input
+            required
             type="text"
             placeholder="Going gym @9pm"
             className="form-control"
@@ -44,6 +46,7 @@ const CreateForm = () => {
         <div className="mb-3">
           <label className="form-label">Who's Doing</label>
           <input
+            required
             type="text"
             className="form-control"
             placeholder="Himesh"
@@ -52,7 +55,7 @@ const CreateForm = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary w-100">
           Submit
         </button>
       </form>
