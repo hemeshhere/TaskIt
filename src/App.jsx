@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import CreateForm from "./components/CreateForm";
+import ReadForm from "./components/ReadForm";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 
 function App() {

@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a
+          <Link
             className="navbar-brand"
             style={{ fontFamily: "'Epunda Slab', serif" }}
-            href="#"
+            to="/"
           >
-            TickIt
-          </a>
+            TaskIt
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -26,14 +27,14 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/">
                   Create Post
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/read">
                   All Post
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
