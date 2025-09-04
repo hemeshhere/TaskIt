@@ -1,16 +1,23 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { searchUser } from "../features/userDetailsSlice";
 
 const Navbar = () => {
-  const allUsers = useSelector((state)=> state.app.users)
+  const allUsers = useSelector((state) => state.app.users);
+  const [searchData, setsearchData] = useState("");
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(searchUser(searchData));
+  }, [searchData]);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <Link
             className="navbar-brand"
-            style={{ fontFamily: "'Epunda Slab', serif" }}
+            style={{ fontFamily: "Asimovian" }}
             to="/"
           >
             TaskIt
@@ -43,16 +50,10 @@ const Navbar = () => {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Search Tasks"
                 aria-label="Search"
+                onChange={(e) => setsearchData(e.target.value)}
               />
-              <button
-                className="btn btn-outline-success"
-                style={{ backgroundColor: "rgba(228, 253, 254, 1)" }}
-                type="submit"
-              >
-                Search
-              </button>
             </form>
           </div>
         </div>
